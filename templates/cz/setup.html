@@ -1,0 +1,40 @@
+<!-- cz verze panelu pro setup. Vloží se do divu panel_setup -->
+<!-- <h3>Nastavení</h3> -->
+
+<h4>Výběr jazyka</h4>
+
+<fieldset data-role="controlgroup" >
+    <input type="radio" data-bind="arr_setup.akt_jazyk" name="akt_jazyk" id="cz">
+    <label for="cz">Česky</label>
+    <input type="radio" data-bind="arr_setup.akt_jazyk" name="akt_jazyk" id="en">
+    <label for="en">English</label>
+    <input type="radio" data-bind="arr_setup.akt_jazyk" name="akt_jazyk" id="de">
+    <label for="de">Deutsch</label>
+</fieldset>
+
+<h4>Zvětšování mapy</h4>
+
+<p>Měnit automaticky měřítko mapy, aby se zobrazila všechna vybraná místa?</p>
+<select name="flip-1" data-bind="arr_setup.zoom_map" id="switch_zoom_map" data-role="slider">
+    <option value="off">Ne</option>
+    <option value="on">Ano</option>
+</select>
+<!-- <div class="ui-grid-a">
+    <div class="ui-block-a">
+      <select name="flip-1" data-bind="arr_setup.zoom_map" id="switch_zoom_map" data-role="slider">
+          <option value="off">Ne</option>
+          <option value="on">Ano</option>
+      </select>    
+    </div>
+    <div class="ui-block-b">
+      <a href="#popup_info_zoom" data-rel="popup" data-role="button" data-icon="info" data-iconpos="notext" data-theme="c" data-inline="true">Info</a>      
+    </div>
+</div> 
+
+<div data-role="popup" id="popup_info_zoom" class="ui-content" data-theme="e" style="max-width:350px;">
+  <p>Při výběru kategorie mohou být některé značky mimo oblast mapy, kterou právě prohlížíte.<br>
+Zapnutím přepínače se zvětšení mapy automaticky nastaví tak, abyste viděli všechny značky.</p>
+</div> -->
+
+
+

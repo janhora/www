@@ -1,0 +1,107 @@
+body{padding:0;margin:0;border:0}
+
+/* #page_mapa{border:1px solid red;} */
+
+#map_content, #div_zoom {padding:0;margin:0;border:0}
+#map{position:relative;left:0;top:0;width:400px;height:200px;} /* cursor:crosshair;border:1px solid red;position:absolute;left:0;top:0;;border:10px solid red */
+#menu{
+  position:absolute;
+  right:10px;
+  bottom:10px;
+  width:150px;
+  height:50px;
+  z-index:1000;
+  
+ /* border:1px solid gray; display:none; */
+}
+
+#but_panel_open{
+  position:absolute;
+  right:10px;
+  top:10px;
+  padding:6px;
+  background-color:white;
+}
+
+.vlajka{padding:6px;}
+
+.overthrow-enabled .overthrow {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* .my-div-icon{width:30px;height:30px;background-color:red;} */
+.hidd{display:none}
+.nahled{border:1px solid gray;margin:5px}
+.div_nahledy{text-align:center}
+
+#div_menu_open{
+position:absolute;right:0;top:0;width:90px;height:90px;z-index:40000;border:1px solid red;background-color:white; 
+/* background-image: url(../js/images/layers.png);
+background-repeat: no-repeat; 
+background-position: center center;
+cursor: hand; */
+/* background-color:white; border:1px solid red;*/
+}
+
+.but_lt{position:absolute;left:2px;top:2px;z-index:40000;}
+
+ /* .leaflet-tile{border:1px solid red} */  /* orámování dlaždic */ 
+
+/* .ui-icon {
+    background-color: transparent;
+    width: 22px;
+    height: 22px;
+} */
+
+/* .ui-icon-bars {
+   background: url("131-tower.png") no-repeat 50% 50% !important;      
+   -moz-border-radius:0px;
+   -webkit-border-radius:0px;
+   border-radius:0px;
+   width:15px;
+   height:24px;
+   margin-top:-12px;
+} */
+
+#div_mapy .ui-slider-switch { width: 9em } 
+.h3_r{text-align:right;padding-right:1em}
+.ui-slider-input { display : none !important;} /*  u slideru pro volbu max zoomu neukazuju pole pro ruèní zadání */
+.ui-block-a, .ui-block-b, .ui-block-c{text-align:center}   /* ;border:1px solid red */
+.prubeh{color:red}/* prùbìh downloadu nebo mazání dlaždic */
+
+.img_font{font-size:2em;color:#5796C7}/* nastavení velikosti fontello fontù */
+.cluster{
+   background-image: url('../markers/bublina_prazdna.png'); 
+   position: relative;
+   left:-30px;
+   top:-26px;
+}
+
+.cluster_pocet{
+  font-size:14px;
+  font-weight:bold;
+  position:absolute;
+  left:0;
+  width:52px;
+  top:9px;
+  color:#32A2E8;
+  text-align:center;
+}
+#div_menu, #panel_pc{visibility:hidden} /* ukážu až se usadí na místo */
+
+#panel_pc{  
+  position:absolute;
+  right:15px;
+  background-color: white;
+  top:9px;
+  padding:10px 5px 10px 7px;
+  z-index:10000;
+}
+
+#panel_pc a{
+text-decoration: none;
+
+}
+
+#panel_setup{padding:10px}

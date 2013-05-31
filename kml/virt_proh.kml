@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>Virtuální prohlídky Litoměřice</name>
+  <description><![CDATA[]]></description>
+  <Style id="style4">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/ms/micons/woman.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style7">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/ms/micons/red-pushpin.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style5">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/ms/micons/red-pushpin.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style9">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/ms/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style8">
+    <LineStyle>
+      <color>73FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style3">
+    <LineStyle>
+      <color>730099FF</color>
+      <width>20</width>
+    </LineStyle>
+  </Style>
+  <Style id="style6">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/ms/micons/pink-pushpin.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style2">
+    <LineStyle>
+      <color>73FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style1">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Placemark>
+    <name>Radobýl</name>
+    <description><![CDATA[<img src="http://test.quasar.cz/virtual/radobyl.jpg"><br>
+<a href="http://test.quasar.cz/virtual/zkusebna.html">Virtální prohlídka</a>
+]]></description>
+    <styleUrl>#style4</styleUrl>
+    <Point>
+      <coordinates>14.093571,50.531544,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Mírové náměstí</name>
+    <description><![CDATA[<img src="http://test.quasar.cz/virtual/namesti.jpg"><br>
+<a href="http://test.quasar.cz/virtual/zkusebna.html">Virtální prohlídka</a>
+]]></description>
+    <styleUrl>#style7</styleUrl>
+    <Point>
+      <coordinates>14.131207,50.534107,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Parkány</name>
+    <description><![CDATA[<img src="http://test.quasar.cz/virtual/parkany.jpg"><br>
+<a href="http://test.quasar.cz/virtual/zkusebna.html">Virtální prohlídka</a>
+]]></description>
+    <styleUrl>#style5</styleUrl>
+    <Point>
+      <coordinates>14.130177,50.533371,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Značka místa 4</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style9</styleUrl>
+    <Point>
+      <coordinates>14.103699,50.534298,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>xxx</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style8</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        14.099879,50.541473,0.000000
+        14.105759,50.541988,0.000000
+        14.108377,50.540054,0.000000
+        14.112754,50.541363,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Čára 2</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style3</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        14.078636,50.564266,0.000000
+        14.072285,50.556198,0.000000
+        14.054940,50.550961,0.000000
+        14.106780,50.531872,0.000000
+        14.156570,50.548889,0.000000
+        14.150390,50.541470,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Značka místa 5</name>
+    <description><![CDATA[sfsfdsf]]></description>
+    <styleUrl>#style6</styleUrl>
+    <Point>
+      <coordinates>14.050140,50.574734,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Čára 3</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style2</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        14.099522,50.550373,0.000000
+        14.112625,50.571243,0.000000
+        14.137344,50.576477,0.000000
+        14.149303,50.562805,0.000000
+        14.156170,50.562588,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Pikron</name>
+    <description><![CDATA[<div dir="ltr">xxx</div>]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>14.089966,50.542343,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

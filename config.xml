@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "cz.quasar.kamna"
+        versionCode="8" 
+        version   = "1.0.0">
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>Kam na ...</name>
+
+    <description>
+        Mobilní průvodce po severních Čechách.
+    </description>
+
+    <author href="webredaktor.cz" email="hora.jan@gmail.com">
+        Jan Hora
+    </author>
+    <preference name="phonegap-version" value="2.5.0" />
+    <preference name="orientation" value="default" />
+    
+    <icon src="icons/ios_57.png" width="57" height="57" />
+    <icon src="icons/ios_72.png" gap:platform="ios" width="72" height="72" />
+    <icon src="icons/ios_114.png" width="114" height="114" />
+    
+    <icon src="icons/android_36.png" gap:platform="android" gap:density="ldpi" />
+    <icon src="icons/android_48.png" gap:platform="android" gap:density="mdpi" />
+    <icon src="icons/android_72.png" gap:platform="android" gap:density="hdpi" />
+    <icon src="icons/android_96.png" gap:platform="android" gap:density="xhdpi" />
+    
+    <icon src="icons/winphone_62.png" gap:platform="winphone" />
+    <icon src="icons/winphone_173.png" gap:platform="winphone" gap:role="background" />
+
+
+</widget>

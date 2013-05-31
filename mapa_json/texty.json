@@ -1,0 +1,57 @@
+{
+  "jazyky": [{"id": "cz","nazev": "Česky"},{"id": "en","nazev": "English"},{"id": "de","nazev": "Deutsch"}],
+  "cz": {
+    "sel_vse_nic":"Vyber VŠE/NIC", 
+    "sel_vse": "Všechno",
+    "sel_nic": "Nic",
+    "zpet": "Zpět",
+    "nastaveni": "Nastavení",
+    "zobrazit": "Zobrazit",
+    "ano": "Ano",
+    "ne": "Ne",
+    "vyber_jazyk": "Vyberte jazyk",
+    "gps_ja": "Zobrazit na mapě pozici, kde se právě nacházíte?", 
+    "mapa_ja": "Automaticky posouvat mapu aby vaše místo bylo uprostřed mapy?",
+    "add_oblibene": "Přidáno k oblíbeným",
+    "oblibene": "Oblíbené položky",
+    "mapa": "mapa",
+    "mapy": "Mapy",
+    "mapy_onoff": "Vyberte si jestli chcete mapy načítat z webu, nebo používat offline",
+    "mapy_popis": "Stáhněte si mapy, které chcete využívat v off-line režimu. Nepoužívané stažené mapy můžete naopak smazat.",
+    "stahnout": "Stáhnout",
+    "stazeno": "Staženo", 
+    "online": "Online",
+    "offline": "Offline",
+    "sport": "Sportoviště",
+    "video": "Videa regionální televize",
+    "nekur": "Nekuřácké restaurace"
+    
+  },
+  "en": {
+    "sel_vse_nic":"Select All/Nothing",
+    "sel_vse": "All",
+    "sel_nic": "Nothing",
+    "zpet": "Back",
+    "nastaveni": "Setup",
+    "zobrazit": "Display",
+    "ano": "Yes",
+    "ne": "No",
+    "vyber_jazyk": "Choose language",
+    "gps_ja": "To see the location on the map where you are?", 
+    "mapa_ja": "Automatically move the map to your place was in the middle of the map?" 
+  },
+  "de": {
+    
+    "sel_vse_nic":"Wählen Alle/Nicht",
+    "sel_vse": "Alle",
+    "sel_nic": "Nicht",
+    "zpet": "Zurück",
+    "nastaveni": "Setup",
+    "zobrazit": "Abbilden",
+    "ano": "Ja",
+    "ne": "Nein",
+    "vyber_jazyk": "Wählen Sie eine Sprache",
+    "gps_ja": "Um die Position auf der Karte, wo Sie sind zu sehen?", 
+    "mapa_ja": "Automatisches Verschieben der Karte, um Ihren Platz war in der Mitte der Karte?" 
+  }  
+}

@@ -1,0 +1,10 @@
+{
+"verze":"PC",
+"online":true,
+"obrazky":"DOWN",
+"device_os":"",
+"tiles": "DB",
+"mapa": "OSM",
+"s3_path": "http:\/\/kamna.cz.s3.amazonaws.com\/xx",
+"s3_path_th": "http://kamna.cz.s3.amazonaws.com/160_120/"
+}

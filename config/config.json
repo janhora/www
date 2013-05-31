@@ -1,0 +1,19 @@
+{
+"verze":"PC",
+"online":true,
+"obrazky":"DOWN",
+"device_os":"",
+"tiles": "DB",
+"mapa": "OSM",
+"s3_path": "http://kamna.cz.s3.amazonaws.com/",
+"s3_path_th": "http://kamna.cz.s3.amazonaws.com/160_120/",
+"vic_jazyku": false,
+"map_styl_id": "80488",
+"default_mapa": "ltm",
+"mapy": [
+ {"id": "ulk", "mesto": "Ústecký kraj", "zoom_min": "8","zoom_max": "12", "lat_min": "50.280564337492414", "lat_max": "51.01029859318957", "lng_min": "13.2550048828125", "lng_max": "14.817810058593748"}
+,{"id": "ltm", "mesto": "Litoměřice", "zoom_min": "12","zoom_max": "18", "lat_min": "50.5198964", "lat_max": "50.5520908", "lng_min": "14.1113603", "lng_max": "14.1484075"}
+,{"id": "lovo", "mesto": "Lovosice",  "zoom_min": "12","zoom_max": "18", "lat_min": "50.50414709777939", "lat_max": "50.53307106119834", "lng_min": "14.034004211425781", "lng_max": "14.086360931396484"}
+,{"id": "tere", "mesto": "Terezín",  "zoom_min": "12","zoom_max": "16", "lat_min": "50.505675599698684", "lat_max": "50.51582796370405", "lng_min": "14.13991928100586", "lng_max": "14.160003662109375"}
+]
+}

@@ -1,0 +1,352 @@
+<!doctype html>
+  <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, , user-scalable=no">
+    <!-- <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no"> -->
+    <!-- <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /> -->  
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="js/leaflet.css" />
+    <link rel="stylesheet" href="js/jquery.mobile-1.3.0.min.css" />
+    <link rel="stylesheet" href="css/mapa.css" />
+    <link rel="stylesheet" href="css/fontello.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/MarkerCluster.Default.css">
+    <!--<script src="cordova.js"></script> V cloudu si nahradi vlastni verzi -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/mustache.js"></script>
+    <script src="js/jquery-1.8.2.min.js"></script>
+  
+    <script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+    <script src="js/jquery.mobile-1.3.0.min.js"></script>
+    <script src="js/jquery.timer.js"></script>
+    <script src="js/overthrow.js"></script>
+    <script src="js/leaflet.js"></script>
+    <script src="js/leaflet.markercluster.js"></script>
+    <script src="js/layer/vector/KML.js"></script>
+  
+  	<script src="plugins/layer/tile/Google.js"></script>
+  
+    <script src="js/menu.js"></script>               
+    <script src="js/gps.js"></script>
+    <script src="js/mapa.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/start.js"></script>
+    <script src="js/detectmobilebrowser.js"></script>
+    
+    <script type="text/javascript" charset="utf-8">
+
+    // Call onDeviceReady when Cordova is loaded.
+    function onLoad() {
+        document.ondeviceready = onDeviceReady;
+        on_load();
+    }
+    function onDeviceReady() {
+        //ale("onDeviceReady")
+        clog("==== onDeviceReady");
+        menu.files_nacti()
+    }
+
+    </script>
+       
+     
+    <title></title>
+    </head>
+    <body onload="onLoad()">
+      <div data-role="page" id="page_mapa"> 
+      
+        <!-- postranní panely PC verze -->
+        <div data-role="panel" data-position="right" data-display="overlay" id="panel_kategorie"><!-- panel kategorie -->
+          <div class="overthrow" id="div_kategorie"><!-- seznam jednotlivých druhů míst -->
+          </div>
+        </div>
+        
+        <div data-role="panel" data-position="right" data-display="overlay" id="panel_trasy"><!-- panel OSM trasy -->
+            <h3 data-bind="texty.trasy"></h3>
+            <ul data-role="listview" data-inset="true" id="lv_trasy_panel">
+            </ul>
+        </div>
+        <div data-role="panel" data-position="right" data-display="overlay" id="panel_setup"><!-- panel SETUP - doplní se po startu -->
+        </div>
+        <!-- END postranní panely PC verze -->
+  
+      	<div data-role="content" id="map_content" class="full_s" style="background-color:white">
+          <div id="map" class="full_s" ></div><!-- MAPA -->
+          <div id="panel_ajax_error" style="position:absolute;left:0;top:0;width:200px;z-index:40000;background-color:#fff;"></div><!-- VYPSANI CHYB PRI AJAXOVEM VOLANI -->
+          
+          <div id="panel_pc" data-theme="c"  class="ui-corner-all ui-overlay-shadow"><!-- malý panel i ikonami - PC verze -->
+            <a href="#" onclick="menu.vyber_co_zobrazit()" data-theme="c" data-bind="texty.zobrazit" >
+              <i class="icon-eye-1 img_font"></i>
+            </a><br><br>
+            <a href="#" onclick="menu.panel_trasy_ukaz()" data-theme="c" data-bind="texty.zobrazit_trasy">
+            <i class="icon-map img_font"></i>
+            </a><br><br>
+            <a href="#" onclick="mapa.videa_rt_zobraz()" data-bind="texty.zobrazit_videa" data-theme="c">
+              <i class="icon-video img_font"></i>
+            </a><br><br>
+            <!--
+            <a href="#" onclick="mapa.ukaz_trasu('OSM sport')" data-theme="c" data-bind="texty.sport">
+              <i class="icon-soccer img_font"></i>
+            </a><br><br>
+            
+              <a href="#" onclick="mapa.ukaz_trasu('OSM fair')" data-theme="c" data-bind="texty.sport">
+              <i class="icon-soccer img_font"></i>
+            </a><br><br>
+            <a href="#" onclick="mapa.ukaz_trasu('OSM sport')" data-theme="c" data-bind="texty.sport">
+              <i class="icon-soccer img_font"></i>
+            </a><br><br>
+            -->
+
+            <a href="#" onclick="menu.panel_jazyky_ukaz()" data-theme="c" data-bind="texty.nastaveni">
+              <i class="icon-cog-1 img_font"></i>
+            </a>
+          </div>
+          
+          <!-- <div id="div_menu_open" >&nbsp;</div> -->
+          <!-- DOLNI MENU -->
+         
+          
+         
+         
+         <!-- POPUP HELP -->
+          <div id="popup_help" class="popup" data-role="popup">           
+            <div data-role="header" data-theme="c"  class="ui-corner-top">    				
+              <h1 id="div_help_hl"></h1>
+              <a href="#" data-rel="back" data-role="button" data-theme="c" data-icon="delete" data-iconpos="notext" class="ui-btn-right" >Close</a>    			
+            </div>    			
+             <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">         
+              <div id="div_help_over" class="overthrow">
+                
+              </div>
+              <div id="div_help_2">
+                
+              </div>
+            </div>    
+          </div><!-- POPUP HELP -->
+          
+          <!-- POPUP LANG -->
+          <div id="popup_lang" class="popup" data-role="popup">           
+            <div data-role="header" data-theme="c"  class="ui-corner-top">    				
+              <h1 id="div_help_hl">Vyberte jazyk</h1>
+              <!-- <a href="#" data-rel="back" data-role="button" data-theme="c" data-icon="delete" data-iconpos="notext" class="ui-btn-right" >Close</a> -->    			
+            </div>    			
+             <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">         
+              <fieldset data-role="controlgroup" id="cg_jazyky_2"></fieldset>
+            </div>    
+          </div><!-- POPUP LANG -->
+          
+  
+         <!-- POPUP VIDEO -->
+          <div id="video_popup" class="popup" data-role="popup">           
+            <div data-role="header" data-theme="c"  class="ui-corner-top">    				
+              
+              <h1 id="div_video_hl">Video</h1>    
+              <a href="#" data-rel="back" data-role="button" data-theme="c" data-icon="delete" data-iconpos="notext" class="ui-btn-right" >Close</a>			
+            </div>    			
+             <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">         
+               
+              <div id="div_player_pc">
+                
+              </div>
+            </div>    
+          </div><!-- POPUP VIDEO -->
+  
+  
+          <div data-role="popup" id="vyber_popup" style="min-width:250px" data-theme="c">
+            <div data-role="header" data-theme="c"  class="ui-corner-top">    				
+              <h1 id="div_video_hl">Co zobrazit</h1>    
+              <a href="#" data-rel="back" data-role="button" data-theme="c" data-icon="delete" data-iconpos="notext" class="ui-btn-right" >Close</a>			
+            </div>
+            <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">         
+              <ul data-role="listview">
+                <li><a href="#" onclick="$.mobile.changePage('#page_texty')">Texty</a></li>
+                <li><a href="#" >Obrázky</a></li>
+                <li id="li_video"><a href="#" >Videa</a></li> 
+              </ul>  
+            </div> 
+          </div>
+  
+         
+         
+         
+        </div><!-- END CONTENT --> 
+      	
+      	<div data-role="footer"  data-theme="c" data-position="fixed" id="div_menu">
+          <div data-role="navbar" data-theme="c" id="div_menu_navbar"> <!-- id="div_lista" class="full_w" -->
+          		<ul>
+          			<li><a href="#" onclick="menu.vyber_co_zobrazit()"   data-theme="c" ><i class="icon-eye-1 img_font"></i></a></li>     <!-- <img src="img/zobrazit.png" border="0"><span data-bind="texty.zobrazit">Zobrazit</span> -->
+          			<li><a href="#" onclick="menu.panel_trasy_ukaz()" data-theme="c"><i class="icon-map img_font"></i></a></li>  <!-- <img src="img/trasa.png" border="0"> -->
+          			<li><a href="#"  onclick="mapa.videa_rt_zobraz()"  data-theme="c"><i class="icon-video img_font"></i></a></li>  <!--href="page_videa" pro textový seznam videí-->
+          			<li><a href="#page_setup2" data-theme="c"><i class="icon-cog-1 img_font"></i></a></li>    <!-- <img src="img/setup.png" border="0"><span data-bind="texty.nastaveni">Nastavení</span> -->
+                <li><a href="#page_log" data-theme="c"><i class="icon-trash img_font"></i></a></li>
+                
+                
+          		</ul>
+         	</div>    
+        </div>
+         
+      </div><!-- END PAGE --> 
+  
+  
+      <div data-role="page" id="page_texty"><!-- DETAIL MÍSTA --> 
+      	<div data-role="header" data-theme="c">
+          <a href="#page_mapa" data-rel="back" data-role="button" data-theme="c" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" >Mapa</a>
+          <h1 id="nadpis_texty"></h1>
+          <!-- <a href="#" onclick="mapa.oblibene_pridej()" data-role="button" data-theme="c" data-icon="star" data-iconpos="notext" class="ui-btn-right" ></a> -->
+        </div>
+      	<div data-role="content" id="content_texty" class="overthrow">
+        </div>
+        <!--  -->
+      	<div data-role="footer" data-theme="c" style="padding:5px">
+          <a href="#page_mapa" data-rel="back" data-role="button" data-theme="c" data-icon="arrow-l" data-iconpos="left" >Mapa</a>
+          <!-- <a href="#" onclick="mapa.oblibene_pridej()" data-role="button" data-theme="c" data-icon="star" data-iconpos="notext" class="ui-btn-right" ></a> -->
+        </div>
+        <div data-role="popup" id="pop_oblibene">
+        </div>
+      </div> <!-- END PAGE DETAIL MÍSTA --> 
+
+      <div data-role="page" id="page_oblibene"><!-- PAGE OBLÍBENÉ --> 
+      	<div data-role="header" data-theme="c">
+          <a data-rel="back" data-role="button" data-theme="c" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" ><span data-bind="texty.zpet"></span></a>
+          <h1 data-bind="texty.oblibene"></h1>
+        </div>
+      	<div data-role="content" id="content_texty" class="overthrow">
+          <ul data-role="listview" data-inset="true" data-split-icon="delete" data-split-theme="e" id="lv_oblibene">
+          </ul>
+          <a data-role="button" data-theme="c" data-icon="arrow-r" data-iconpos="right" ><span data-bind="texty.mapa"></span></a>
+        </div>
+        
+        
+      </div> <!-- END PAGE OBLÍBENÉ --> 
+
+  
+      <!-- PAGE VIDEO -->
+      <div data-role="page" id="page_video"> 
+      	<div data-role="header" data-theme="c">
+          <a data-rel="back" data-role="button" data-theme="c" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" onclick="mapa.video_stop()" ><span data-bind="texty.zpet"></span></a>
+          <h1 id="nadpis_video"></h1>
+        </div>
+      	<div data-role="content">
+          <div id="div_player">
+          
+          </div>
+        </div>
+      </div> <!-- END PAGE VIDEO -->
+      
+      <!-- PAGE LOG -->
+      <div data-role="page" id="page_log"> 
+      	<div data-role="header" data-theme="c">
+          <a data-rel="back" data-role="button" data-theme="c" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" onclick="mapa.video_stop()" ><span data-bind="texty.zpet"></span></a>
+          <h1>Logování</h1>
+        </div>
+      	<div data-role="content">
+          <div id="div_clog" class="overthrow">
+          
+          </div>
+        </div>
+      </div> <!-- END PAGE LOG -->
+      
+      <!-- PAGE SETUP -->
+      <div data-role="page" id="page_setup2" data-add-back-btn="true"> 
+      	<div data-role="header" data-theme="c">  <!-- data-rel="back" -->
+          <a   href="#page_mapa"  data-role="button" data-theme="c" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" >Mapa</a>
+          <h1 id="nadpis_video">SETUP</h1>
+        </div>
+      	<div data-role="content" id="div_setup_mobil">
+          <div class="div_app_only"><!-- stahování obsahu pro offline - u web verze se smaže, ta je vždy online -->
+            <h3 data-bind="texty.mapy"></h3>
+            <p data-bind="texty.mapy_onoff"></p>
+            <div id="div_on_off"><!-- switch pro přepínání online/offline mapy -->
+            </div>
+            <p data-bind="texty.mapy_popis"></p>
+            <div id="div_mapy"><!-- sem se vloží seznam map které se v app dají stáhnout offline -->
+            </div>
+          </div>
+          <div >
+            
+          </div>
+        </div>
+
+        
+      </div> <!-- END PAGE SETUP -->    
+      
+      <!-- PAGE TRASY -->
+      <div data-role="page" id="page_trasy" data-add-back-btn="true"> 
+      	<div data-role="header" data-theme="c">
+          <!-- <a  data-rel="back" data-role="button" data-theme="c" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" >Mapa</a> -->
+          <h1>TRASY</h1>
+        </div>
+      	<div data-role="content">
+          <div data-role="content" class="overthrow" class="full_s">
+            <ul data-role="listview" data-inset="true" id="lv_trasy">
+            </ul>
+          </div>
+            
+        </div>
+      </div> <!-- END PAGE TRASY -->  
+
+      <!-- PAGE VIDEA -->
+      <div data-role="page" id="page_videa" data-add-back-btn="true"> 
+      	<div data-role="header" data-theme="c">
+          <!-- <a  data-rel="back" data-role="button" data-theme="c" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" >Mapa</a> -->
+          <h1>VIDEA</h1>
+        </div>
+      	<div data-role="content" class="overthrow" id="div_videa_seznam">
+        </div>
+      </div> <!-- END PAGE TRASY -->  
+
+      
+      <!-- PAGE OFFLINE nastavení jaké mapy stáhnout k použití offline -->
+      <!-- <div data-role="page" id="page_offline"> 
+      	<div data-role="header" data-theme="c">
+          <a data-rel="back" data-role="button" data-theme="c" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" >Zpět</a>
+          <h1>Offline mapy</h1>
+        </div>
+      	<div data-role="content">
+                Mapy zaškrtnutých míst jsou uloženy pro offline provoz.<br>
+                Zrušením zaškrtnutí můžete mapu smazat a uvolnit tak místo ve vašem zařízení.
+                <br>
+                Místa, které chcete uložit vyberte a potom uložte.
+                <fieldset data-role="controlgroup" id="cg_mesta"></fieldset>
+                
+                
+                <div id="div_download">
+                  
+                </div>
+          </div>
+  
+        </div>
+      </div> --> <!-- END PAGE OFFLINE -->
+  
+  
+      <div data-role="page" id="page_zoom"><!-- PAGE prohlížení detailu fotky -->    	  
+        <a data-rel="back" data-role="button" class="but_lt" data-mini="true" data-theme="c" data-icon="arrow-l" data-iconpos="left" ><span data-bind="texty.zpet"></span></a>
+        <!-- <div data-role="header" data-theme="c">
+          <a data-rel="back" data-role="button" data-theme="c" data-icon="arrow-l" data-iconpos="left" >Zpět</a>
+          <h1>&nbsp;</h1>
+        </div>  -->     
+        <div data-role="content" id="div_zoom" class="overthrow full_s">          
+        </div> 
+      </div><!-- END PAGE -->             
+  
+      <div data-role="page" id="page_setup1"><!-- PAGE SETUP -->    	  
+        <div data-role="header" data-theme="c">
+          <a data-rel="back" data-role="button" data-theme="c" data-icon="arrow-l" data-iconpos="left" onclick="mapa.mista_ukaz(true)" ><span data-bind="texty.zpet"></span></a>
+          <h1 data-bind="texty.zobrazit">&nbsp;</h1>
+        </div>      
+        <div data-role="content" >          
+          <div class="overthrow" id="div_panel_content">
+          </div>
+        </div><!-- END CONTENT --> 
+      </div><!-- END PAGE --> 
+  
+  
+      	
+          
+              
+          
+        
+        
+  
+    </body>
+  </html>

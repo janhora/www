@@ -1,0 +1,3 @@
+Normálnì mám tyhle knihovny v !www/js_libs ale u offline verze je potøebuju zapakovat do aplikace.
+Proto je zkopíruju k aplikaci.
+Upravovat je ale potøeba sdílené verze na !www/js_libs

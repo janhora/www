@@ -1,0 +1,46 @@
+<!-- POPUP SETUP -->
+        <div id="popup_setup" class="popup" data-role="popup" >           
+          <div id="pop_collapse" data-role="collapsible-set" data-theme="b" data-content-theme="c" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" style="margin:0; ">
+          <div id="cs_jazyk" data-role="collapsible" data-inset="false">
+            <h2 data-bind="texty.vyber_jazyk">aa</h2>
+            <fieldset data-role="controlgroup" id="cg_jazyky_2"></fieldset>
+            
+        </div><!-- /collapsible -->
+        <div data-role="collapsible" data-inset="false">
+            <h2>GPS</h2>
+              <label for="gps_ja"  data-bind="texty.gps_ja"></label><br>
+              <div id="switch_gps_ja"></div>
+              <label for="mapa_ja" data-bind="texty.mapa_ja"></label><br>
+              <div id="switch_mapa_ja"></div>                        
+        </div><!-- /collapsible -->
+        <div data-role="collapsible" data-inset="false">
+            <h2>Co zobrazit</h2>
+            <div id="cg_druh_over" class="overthrow">
+              <div id="div_sel_all">
+                
+              </div>
+              <fieldset data-role="controlgroup" id="cg_druh"></fieldset>  
+            </div>
+            
+            
+        </div><!-- /collapsible -->
+        
+    </div><!-- /collapsible set -->
+        </div><!-- POPUP SETUP -->
+        
+        
+        
+        <div data-role="collapsible-set" data-theme="b" data-content-theme="d">
+    <div data-role="collapsible">
+        <h2 data-bind="texty.nastaveni"></h2>
+        tady bude nastavení
+    </div>
+    <div data-role="collapsible">
+        <h2 data-bind="texty.zobrazit"></h2>
+        <fieldset data-role="controlgroup" id="cg_druh"></fieldset>
+    </div>
+    <div data-role="collapsible">
+        <h2 data-bind="texty.vyber_jazyk"></h2>
+        <fieldset data-role="controlgroup" id="cg_jazyky"></fieldset>
+    </div>
+</div>

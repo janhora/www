@@ -1,0 +1,3 @@
+{
+  "jazyky": [{"id": "cz","nazev": "Česky"},{"id": "en","nazev": "English"},{"id": "de","nazev": "Deutsch"}]
+}
